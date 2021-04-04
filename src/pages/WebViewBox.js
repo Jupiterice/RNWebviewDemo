@@ -2,6 +2,9 @@ import React from 'react';
 import {StyleSheet, SafeAreaView, Dimensions} from 'react-native';
 import {WebView} from 'react-native-webview';
 
+// 配置h5页面的地址
+const H5_URL = 'http://localhost:6868/#/';
+
 // Dimensions 用于获取设备宽、高、分辨率
 const {width, height} = Dimensions.get('window');
 
@@ -10,7 +13,8 @@ const myApp = () => {
     <SafeAreaView style={styles.container}>
       <WebView
         style={{width: width, height: height}}
-        source={{uri: 'http://192.168.1.62:6868/#/'}}
+        scrollEnabled="false"
+        source={{uri: H5_URL}}
         // scalesPageToFit={Platform.OS === 'ios' ? true : false}
       />
     </SafeAreaView>
